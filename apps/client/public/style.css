@@ -1,0 +1,92 @@
+:root {
+  --bg: #1e293b;
+  --fg: #ffffff;
+  --border: #334155;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 40px;
+  height: 100vmin;
+}
+
+main {
+  height: 80%;
+  display: flex;
+  flex-shrink: 1;
+}
+
+canvas {
+  aspect-ratio: 1/1;
+  height: 100%;
+  flex-shrink: 1;
+  border: 1px solid var(--border);
+}
+
+#output {
+  flex-grow: 0;
+  border: 1px solid var(--border);
+  border-left: none;
+  width: 300px;
+  font-family: sans-serif;
+  overflow-y: auto;
+}
+
+#output ul {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 18px;
+}
+
+#output li {
+  width: 50%;
+  
+  display: flex;
+  gap: 8px;
+}
+
+#output li:first-child {
+  margin-bottom: 12px;
+  width: 100%;
+  padding: 24px 12px;
+  text-align: center;
+  border-radius: 12px;
+  background: #1e40af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#output li span {
+  font-size: 36px;
+}
+
+#actions {
+  height: 80px;
+  margin-top: 12px;
+}
+
+button {
+  cursor: pointer;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+}

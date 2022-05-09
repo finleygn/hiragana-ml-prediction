@@ -1,0 +1,5 @@
+.env
+
+data/font/*
+data/images/*
+data/out.h5
