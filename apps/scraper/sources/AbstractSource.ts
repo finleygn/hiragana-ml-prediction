@@ -21,7 +21,7 @@ abstract class AbstractFontSource {
   /**
    * The loading step - get possible fonts to download
    */
-  public abstract start?(): Promise<void>;
+  public abstract scrape?(): Promise<void>;
 
   public iter = () => ({
     [Symbol.asyncIterator]: () => {

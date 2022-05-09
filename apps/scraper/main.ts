@@ -13,5 +13,5 @@ const scraper = new Scraper([
   new GoogleFontSource(GOOGLE_API_KEY),
 ])
 
-await scraper.startSources();
-await scraper.runSources();
+await scraper.scrape();
+await scraper.download();

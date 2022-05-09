@@ -17,23 +17,23 @@ class Scraper {
     this.sources = sources;
   }
 
-  public async startSources() {
-    console.log(`${colors.blue(colors.bold(`[Creating sources]`)) }`);
+  public async scrape() {
+    console.log(`${colors.blue(colors.bold(`[Scraping sources]`)) }`);
     const starts = [];
     for (const source of this.sources) {
       starts.push(
         new Promise<void>(async (res) => {
-          if(source.start) {
+          if(source.scrape) {
             try {
-              await source.start();
+              await source.scrape();
             } catch(e) {
               console.error(colors.red(
-                `Failed to start ${colors.blue(source.name) }`
+                `Failed to scrape ${colors.blue(source.name) }`
               ));
               throw e;
             }
           }
-          console.log(`Started ${colors.blue(source.name) }`);
+          console.log(`Scraped ${colors.blue(source.name) }`);
           res();
         })
       )
@@ -42,7 +42,7 @@ class Scraper {
     await Promise.all(starts);
   }
 
-  public async runSources() {
+  public async download() {
     console.log(`${colors.blue(colors.bold(`[Running sources]`)) }`);
     for (const source of this.sources) {
       for await (const fontMetaFamily of source.iter()) {

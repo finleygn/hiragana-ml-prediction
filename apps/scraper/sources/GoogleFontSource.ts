@@ -19,7 +19,7 @@ class GoogleFontSource extends AbstractFontSource {
     this.apiKey = apiKey;
   }
 
-  public async start(): Promise<void> {
+  public async scrape(): Promise<void> {
     const response = await fetch(
       `https://www.googleapis.com/webfonts/v1/webfonts?key=${this.apiKey}`
     );
@@ -40,7 +40,6 @@ class GoogleFontSource extends AbstractFontSource {
   protected hasMore(): boolean {
     return this.current !== this.total;
   }
-
 
   protected async getMeta(): Promise<FontFamilyMeta> {
     const files = this.dataset[this.current].files;

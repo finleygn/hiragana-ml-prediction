@@ -33,7 +33,7 @@ class JapaneseFontsOrgSource extends AbstractFontSource {
     }
   }
 
-  public async start(): Promise<void> {
+  public async scrape(): Promise<void> {
     // Scrape a bunch of shit here
 
     console.log(await this.loadPaginationPage(2));
