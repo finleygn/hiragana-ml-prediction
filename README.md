@@ -1,4 +1,4 @@
-# Hiragana Prediction
+# (!WIP!) Hiragana Prediction
 
 ![Example](./docs/example.png)
 
