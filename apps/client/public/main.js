@@ -135,7 +135,11 @@ class Application {
       const body = await response.json();
 
       const output = document.createElement("ul");
-      for (const out of body.map((v, i) => ({ char: chars[i], value: v })).sort((a, b) => b.value - a.value)) {
+      for (
+        const out of body
+          .map((v, i) => ({ char: chars[i], value: v }))
+          .sort((a, b) => b.value - a.value)
+      ) {
         const el = document.createElement("li");
         el.innerHTML = `<span>${out.char}</span><p>${out.value.toFixed(2)}</p>`;
         output.appendChild(el);
